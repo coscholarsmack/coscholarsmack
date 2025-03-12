@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Co-scholar</title>
+  <style>
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Body */
+    body {
+      background-color: #f4f4f4;
+      color: #333;
+      padding-top: 60px; /* Space for fixed navbar */
+    }
+
+    /* Navbar */
+    .navbar {
+      width: 100%;
+      background-color: #ff8c00;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      padding: 1em 2em;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    .navbar h1 {
+      font-size: 1.5em;
+    }
+
+    .navbar .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin: 0 0.8em;
+      font-weight: bold;
+    }
+
+    .navbar .sign-in {
+      background-color: #fff;
+      color: #ff8c00;
+      padding: 0.5em 1em;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-left: 1em;
+    }
+
+    /* Page Content */
+    .content {
+      width: 90%;
+      max-width: 1200px;
+      margin: 2em auto;
+      text-align: center;
+    }
+
+    .content h2 {
+      font-size: 2.5em;
+      color: #ff8c00;
+      margin-bottom: 0.5em;
+    }
+
+    .content p {
+      font-size: 1.1em;
+      margin: 1em 0;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    /* Mission Section */
+    .mission-section {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 2em;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2em;
+    }
+
+    /* Creator Section */
+    .creators-section {
+      text-align: center;
+      margin-top: 2em;
+    }
+
+    .creators-section h3 {
+      font-size: 2em;
+      color: #ff8c00;
+      margin-bottom: 1em;
+    }
+
+    .creators-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .creator-card {
+      width: 250px;
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 1.5em;
+      margin: 1em;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .creator-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 1em;
+    }
+
+    .creator-card h4 {
+      font-size: 1.3em;
+      color: #ff8c00;
+    }
+
+    .creator-card p {
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #ff8c00;
+      color: white;
+      text-align: center;
+      padding: 1em 0;
+      font-size: 0.9em;
+      margin-top: 2em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <h1>Co-scholar</h1>
+    <div class="nav-links">
+      <a href="test.html">Home</a>
+      <a href="about us.html">About Us</a>
+      <a href="#solutions">Solutions</a>
+      <a href="contact us.html">Contact</a>
+      <div class="sign-in">library</div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <h2>About Us</h2>
+    <p>Welcome to Co-scholar, a cutting-edge platform dedicated to empowering students with innovative learning resources and personalized support to help them excel academically and achieve their full potential.</p>
+
+    <!-- Mission Section -->
+    <div class="mission-section">
+      <h3>Our Mission</h3>
+      <p>At Co-scholar, we believe in breaking down barriers to education and providing every student with access to high-quality, easily accessible learning materials. Our mission is to inspire, educate, and support learners across diverse backgrounds by providing tools, resources, and expert guidance tailored to each individual’s needs.</p>
+    </div>
+
+    <!-- Creator Highlights -->
+    <div class="creators-section">
+      <h3>Meet the Creators</h3>
+      <div class="creators-container">
+
+        <!-- Creator 1 -->
+        <div class="creator-card">
+          <img src="images/penfold.jpg" alt="Penfold">
+          <h4>Penfold</h4>
+          <p>Founder & Lead Developer</p>
+          <p>Penfold is the visionary behind Co-scholar, driven by a passion for education and technology. With a background in ICT and a deep understanding of educational needs, Penfold is committed to creating a platform that bridges the gap between students and quality resources.</p>
+        </div>
+
+        <!-- Creator 2 -->
+        <div class="creator-card">
+          <img src="gabriel.jpg" alt="Gabriel">
+          <h4>Gabriel</h4>
+          <p>Co-Founder & Educational Strategist</p>
+          <p>Gabriel's expertise in educational strategies brings valuable insights to Co-scholar, ensuring that the platform meets students’ academic needs effectively. Gabriel’s dedication to accessible learning makes Co-scholar a reliable resource for all students.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>&copy; 2024 Co-scholar. All rights reserved.</p>
+  </div>
+
+</body>
+</html>

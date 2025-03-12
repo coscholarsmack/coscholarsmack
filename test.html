@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Co-scholar - Your Study Companion</title>
+    <!-- Font Awesome for Icons -->
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-color: #FF6600;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            color: white;
+        }
+        .navbar-nav .nav-link {
+            font-weight: bold;
+            color: white;
+        }
+        .navbar-toggler {
+            border: none;
+            outline: none;
+        }
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        .dropdown-menu {
+            background-color: #FF6600;
+        }
+        .dropdown-menu .dropdown-item {
+            color: white;
+        }
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #e65c00;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background-image: url('images/back.jpg'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background-color: #FF6600;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .cta-button:hover {
+            background-color: #e65c00;
+        }
+
+        /* Contents Section */
+        .contents-section {
+            padding: 2rem;
+            background-color: #f9f9f9;
+        }
+
+        .contents-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .contents-header h2 {
+            color: #FF6600;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contents-header p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .contents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .content-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .content-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .content-item h3 {
+            color: #FF6600;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .content-item p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .content-item a {
+            text-decoration: none;
+            color: #FF6600;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .content-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        #footer {
+            background-color: #FF6600;
+            color: white;
+            padding: 2rem 0;
+            font-size: 0.9rem;
+        }
+
+        #footer h3, #footer h4 {
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        #footer .footer-info, #footer .footer-links, #footer .footer-newsletter {
+            margin-bottom: 1rem;
+        }
+
+        #footer .footer-top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            text-align: left;
+        }
+
+        #footer .social-links {
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        #footer .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        #footer .social-links a:hover {
+            color: #FFD700;
+        }
+
+        #footer .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #footer .footer-links ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        #footer .footer-links ul li i {
+            color: white;
+            margin-right: 0.5rem;
+        }
+
+        #footer .footer-newsletter form {
+            display: flex;
+            margin-top: 1rem;
+        }
+
+        #footer .footer-newsletter input[type="email"] {
+            border: 0;
+            padding: 8px;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+            width: 70%;
+        }
+
+        #footer .footer-newsletter input[type="submit"] {
+            background: #333;
+            color: white;
+            border: 0;
+            padding: 8px 16px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-bottom a {
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#hero">Co-scholar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="library.html">Library</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about us.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="teachers.html">Teachers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ai-solutions">AI Solutions</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="meeting room.html">Meeting Rooms</a></li>
+                            <li><a class="dropdown-item" href="contact us.html">Contact Us</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to Co-scholar</h1>
+            <p>Your ultimate resource hub for knowledge, guidance, and success.</p>
+            <a href="#library" class="cta-button">Explore Library</a>
+        </div>
+    </section>
+
+    <!-- Contents Section -->
+    <section class="contents-section">
+        <div class="contents-header">
+            <h2>Our Features</h2>
+            <p>Explore our comprehensive features designed to support your learning journey.</p>
+        </div>
+        <div class="contents-grid">
+            <div class="content-item">
+                <h3>Library</h3>
+                <p>A vast collection of educational materials and resources at your fingertips.</p>
+                <a href="library.html">Explore Library</a>
+            </div>
+            <div class="content-item">
+                <h3>About Us</h3>
+                <p>Learn more about our mission, vision, and team.</p>
+                <a href="about us.html">Learn More</a>
+            </div>
+            <div class="content-item">
+                <h3>Teachers</h3>
+                <p>Access a network of qualified educators to support your learning journey.</p>
+                <a href="teachers.html">Meet Teachers</a>
+            </div>
+            <div class="content-item">
+                <h3>AI Solutions</h3>
+                <p>Innovative AI tools to guide you in answering questions and solving problems.</p>
+                <a href="#ai-solutions">Discover AI</a>
+            </div>
+            <div class="content-item">
+                <h3>Meeting Rooms</h3>
+                <p>Collaborate and discuss with peers in virtual meeting spaces.</p>
+                <a href="meeting room.html">Join Rooms</a>
+            </div>
+            <div class="content-item">
+                <h3>Contact Us</h3>
+                <p>Get in touch with us for inquiries and support.</p>
+                <a href="contact us.html">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="footer-info">
+                <h3>Co-scholar</h3>
+                <p>
+                    123 Street Name<br>
+                    City, Country<br><br>
+                    <strong>Phone:</strong> +256 772577366<br>
+                    <strong>Email:</strong> info@co-scholar.com<br>
+                </p>
+                <div class="social-links">
+                    <a href="#" class="fab fa-twitter" title="Twitter"></a>
+                    <a href="#" class="fab fa-facebook-f" title="Facebook"></a>
+                    <a href="#" class="fab fa-instagram" title="Instagram"></a>
+                    <a href="#" class="fab fa-linkedin-in" title="LinkedIn"></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><i class="fas fa-chevron-right"></i> <a href="#">Home</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="#contact">Contact Us</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="#teachers">Teachers</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="#meeting-rooms">Meeting Rooms</a></li>
+                    <li><i class="fas fa-chevron-right"></i> <a href="#library">Library</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-newsletter">
+                <h4>Our Newsletter</h4>
+                <p>Subscribe to our newsletter to stay updated.</p>
+                <form action="" method="post">
+                    <input type="email" name="email" placeholder="Enter your email"><input type="submit" value="Subscribe">
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Co-scholar. All rights reserved.</p>
+            <p>Designed by <a href="#">Sir_Penfold</a></p></div>
+    </footer>
+    <!--end od footer-->
+</body></html>

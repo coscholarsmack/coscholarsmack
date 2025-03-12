@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachers | Co-scholar</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .navbar {
+            background-color: #ff7f50 !important;
+        }
+        .navbar-brand, .navbar-nav .nav-link {
+            color: #ffffff !important;
+        }
+        .navbar-nav .nav-link {
+            padding-right: 1rem;
+            padding-left: 1rem;
+        }
+        .teacher-profile {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        .teacher-profile .profile-picture {
+            max-width: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .teacher-profile .name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .teacher-profile .subjects {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .teacher-profile .portfolio {
+            margin-bottom: 15px;
+        }
+        .teacher-profile .portfolio a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .teacher-profile .portfolio a:hover {
+            text-decoration: underline;
+        }
+        #footer {
+            background-color: #ff7f50;
+            color: #ffffff;
+            padding: 40px 0;
+            font-size: 14px;
+        }
+
+        #footer .footer-top {
+            background: #e36b40;
+            padding: 60px 0 30px 0;
+            color: #ffffff;
+        }
+
+        #footer h4 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffffff;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        #footer .footer-info p, #footer .footer-links ul, #footer .footer-newsletter p {
+            color: #ffffff;
+        }
+
+        #footer .footer-links ul li {
+            list-style: none;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        #footer .footer-links ul i {
+            font-size: 18px;
+            padding-right: 2px;
+            color: #ffffff;
+        }
+
+        #footer .footer-links ul a {
+            color: #ffffff;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        #footer .footer-links ul a:hover {
+            color: #000000;
+        }
+
+        #footer .social-links a {
+            font-size: 18px;
+            display: inline-block;
+            background: #333333;
+            color: #ffffff;
+            line-height: 1;
+            padding: 8px 0;
+            margin-right: 4px;
+            border-radius: 50%;
+            text-align: center;
+            width: 36px;
+            height: 36px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        #footer .social-links a:hover {
+            background: #ffffff;
+            color: #333333;
+        }
+
+        #footer .footer-newsletter input[type="email"] {
+            border: 0;
+            padding: 6px 8px;
+            width: 65%;
+            border-radius: 4px 0 0 4px;
+        }
+
+        #footer .footer-newsletter input[type="submit"] {
+            background: #333333;
+            border: 0;
+            width: 35%;
+            padding: 6px 0;
+            text-align: center;
+            color: #ffffff;
+            transition: 0.3s;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        #footer .footer-newsletter input[type="submit"]:hover {
+            background: #555555;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Co-scholar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="test.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact us.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="meeting room.html">Meeting Rooms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="library.html">Library</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Page Content -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <h1 class="text-center mb-4">Our Teachers</h1>
+
+                <!-- Teacher Profile 1 -->
+                <div class="teacher-profile">
+                    <div class="row">
+                        <div class="col-md-3 text-center">
+                            <img src="/images/teacher.jfif" alt="Teacher" class="profile-picture img-fluid">
+                        </div>
+                        <div class="col-md-9">
+                            <div class="name">Mubiito Johnson</div>
+                            <div class="subjects">Subjects: Mathematics, Physics</div>
+                            <div class="portfolio">
+                                <p>Portfolio: <a href="#">View Portfolio</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher Profile 2 -->
+                <div class="teacher-profile">
+                    <div class="row">
+                        <div class="col-md-3 text-center">
+                            <img src="\images\teacher.jfif" alt="Teacher 2" class="profile-picture img-fluid">
+                        </div>
+                        <div class="col-md-9">
+                            <div class="name">Holy Jonah</div>
+                            <div class="subjects">Subjects: Biology, Chemistry</div>
+                            <div class="portfolio">
+                                <p>Portfolio: <a href="#">View Portfolio</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher Profile 3 -->
+                <div class="teacher-profile">
+                    <div class="row">
+                        <div class="col-md-3 text-center">
+                            <img src="\images\teacher4.jfif" alt="Teacher 3" class="profile-picture img-fluid">
+                        </div>
+                        <div class="col-md-9">
+                            <div class="name">Mpagi Micheal</div>
+                            <div class="subjects">Subjects: Literature, History</div>
+                            <div class="portfolio">
+                                <p>Portfolio: <a href="#">View Portfolio</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher Profile 4 -->
+                <div class="teacher-profile">
+                    <div class="row">
+                        <div class="col-md-3 text-center">
+                            <img src="/images/teacher2.jfif" alt="Teacher 4" class="profile-picture img-fluid">
+                        </div>
+                        <div class="col-md-9">
+                            <div class="name">Ssegawa Valentino</div>
+                            <div class="subjects">Subjects: Computer Science, Programming</div>
+                            <div class="portfolio">
+                                <p>Portfolio: <a href="#">View Portfolio</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                   <!-- Teacher Profile 5 -->
+                   <div class="teacher-profile">
+                    <div class="row">
+                        <div class="col-md-3 text-center">
+                            <img src="/images/teacher2.jfif" alt="Teacher 4" class="profile-picture img-fluid">
+                        </div>
+                        <div class="col-md-9">
+                            <div class="name">Gum jean</div>
+                            <div class="subjects">Subjects: Computer Science, Programming</div>
+                            <div class="portfolio">
+                                <p>Portfolio: <a href="#">View Portfolio</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>   <!-- Teacher Profile 6 -->
+                <div class="teacher-profile">
+                    <div class="row">
+                        <div class="col-md-3 text-center">
+                            <img src="/images/teacher2.jfif" alt="Teacher 4" class="profile-picture img-fluid">
+                        </div>
+                        <div class="col-md-9">
+                            <div class="name">Murungi Penfold</div>
+                            <div class="subjects">Subjects: Computer Science, Programming</div>
+                            <div class="portfolio">
+                                <p>Portfolio: <a href="#">View Portfolio</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>   <!-- Teacher Profile 7 -->
+                <div class="teacher-profile">
+                    <div class="row">
+                        <div class="col-md-3 text-center">
+                            <img src="/images/teacher2.jfif" alt="Teacher 4" class="profile-picture img-fluid">
+                        </div>
+                        <div class="col-md-9">
+                            <div class="name">Musinguzi Samson</div>
+                            <div class="subjects">Subjects: Computer Science, Programming</div>
+                            <div class="portfolio">
+                                <p>Portfolio: <a href="#">View Portfolio</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>   <!-- Teacher Profile 8 -->
+                <div class="teacher-profile">
+                    <div class="row">
+                        <div class="col-md-3 text-center">
+                            <img src="/images/teacher2.jfif" alt="Teacher 4" class="profile-picture img-fluid">
+                        </div>
+                        <div class="col-md-9">
+                            <div class="name">Karungi joan</div>
+                            <div class="subjects">Subjects: Computer Science, Programming</div>
+                            <div class="portfolio">
+                                <p>Portfolio: <a href="#">View Portfolio</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more teacher profiles as needed -->
+
+            </div>
+        </div>
+    </div>
+    <!-- End Page Content -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 footer-info">
+                        <h3>Co-scholar</h3>
+                        <p>
+                            123 Street Name<br>
+                            City, Country<br><br>
+                            <strong>Phone:</strong> +256 772577366<br>
+                            <strong>Email:</strong> info@Co-scholar.com<br>
+                        </p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="contact us.html">Contact Us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Teachers</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Meeting Rooms</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Library</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Resource Management</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Online Courses</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Research Assistance</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Community Engagement</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Access</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 footer-newsletter">
+                        <h4>Our Newsletter</h4>
+                        <p>Please you can also subscribe to our newsletter</p>
+                        <form action="" method="post">
+                            <input type="email" name="email"><input type="submit" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <div class="copyright">
+                &copy; Copyright <strong><span>Co-scholar</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                Designed by <a href="#">sir_penfold the great</a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+   
+   
+    
+
+
+    <!-- Vendor JS Files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+
+</body>
+</html>

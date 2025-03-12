@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Room - Co-scholar</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #ff7f50;
+            color: #ffffff;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .header .navbar-brand {
+            font-weight: bold;
+        }
+
+        .header .nav-link {
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .header .nav-link:hover {
+            color: #f39c12;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .meeting-room-content {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        .meeting-room-header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .meeting-room-header h1 {
+            font-size: 42px;
+            color: #ff7f50;
+            margin-bottom: 15px;
+        }
+
+        .meeting-room-header p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .meeting {
+            margin-bottom: 30px;
+        }
+
+        .meeting h3 {
+            font-size: 24px;
+            color: #ff7f50;
+            margin-bottom: 15px;
+        }
+
+        .meeting .list-group-item {
+            border-color: #dddddd;
+            transition: all 0.3s;
+        }
+
+        .meeting .list-group-item:hover {
+            background-color: #f9f9f9;
+        }
+
+        .meeting .btn-primary {
+            background-color: #f39c12;
+            border-color: #f39c12;
+            transition: all 0.3s;
+        }
+
+        .meeting .btn-primary:hover {
+            background-color: #e67e22;
+            border-color: #e67e22;
+        }
+
+        .create-meeting-form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .create-meeting-form h3 {
+            font-size: 24px;
+            color: #ff7f50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .create-meeting-form .form-group label {
+            font-weight: bold;
+        }
+
+        .create-meeting-form .btn-success {
+            background-color: #27ae60;
+            border-color: #27ae60;
+            transition: all 0.3s;
+        }
+
+        .create-meeting-form .btn-success:hover {
+            background-color: #219d54;
+            border-color: #219d54;
+        }
+
+        .chat-area {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-area h3 {
+            font-size: 24px;
+            color: #ff7f50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .chat-message {
+            margin-bottom: 15px;
+        }
+
+        .chat-message .message-user {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .chat-message .message-time {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .chat-input textarea {
+            width: 100%;
+            resize: none;
+            height: 80px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        .chat-input textarea:focus {
+            border-color: #f39c12;
+        }
+
+        .chat-input button {
+            background-color: #ff7f50;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .chat-input button:hover {
+            background-color: #ff7f50;
+        }
+
+        .footer {
+            background-color: #ff7f50;
+            color: #ffffff;
+            padding: 40px 0;
+            font-size: 14px;
+            margin-top: 30px;
+        }
+        .footer .footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer .footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer .footer-links ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer .footer-links ul li a:hover {
+    color: #f39c12;
+}
+
+
+        .footer .footer-info p, .footer .footer-links ul, .footer .footer-newsletter p {
+            color: #ffffff;
+        }
+
+        .footer .social-links a {
+            font-size: 18px;
+            display: inline-block;
+            background: #333333;
+            color: #ffffff;
+            line-height: 1;
+            padding: 8px 0;
+            margin-right: 4px;
+            border-radius: 50%;
+            text-align: center;
+            width: 36px;
+            height: 36px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .footer .social-links a:hover {
+            background: #f39c12;
+            color: #ffffff;
+        }
+
+        .footer .footer-bottom {
+            text-align: center;
+            padding: 20px 0;
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .meeting-room-header h1 {
+                font-size: 36px;
+            }
+
+            .meeting-room-header p {
+                font-size: 16px;
+            }
+
+            .chat-input textarea {
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <nav class="header navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#"><b>Co-scholar</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="test.html"><b>Home</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact us.html"><b>Contact Us</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="teachers.html"><b>Teachers</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="meeting room.html"><b>Meeting Rooms</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="library.html"><b>Library</b></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Meeting Room Content -->
+    <div class="container meeting-room-content">
+        <div class="meeting-room-header">
+            <h1>Virtual Meeting Room</h1>
+            <p>Connect and collaborate with teachers and peers.</p>
+        </div>
+
+        <!-- Scheduled Meetings Section -->
+        <div class="meeting">
+            <h3>Scheduled Meetings</h3>
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Mathematics - Algebra</h5>
+                        <small>June 25, 2024 | 10:00 AM - 11:00 AM</small>
+                    </div>
+                    <p class="mb-1">Join your mathematics session here.</p>
+                    <button class="btn btn-primary">Join Meeting</button>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Physics - Mechanics</h5>
+                        <small>June 27, 2024 | 09:30 AM - 10:30 AM</small>
+                    </div>
+                    <p class="mb-1">Discuss physics concepts with your peers.</p>
+                    <button class="btn btn-primary">Join Meeting</button>
+                </a>
+            </div>
+        </div>
+
+        <!-- Create New Meeting Section -->
+        <div class="create-meeting-form">
+            <h3>Create New Meeting</h3>
+            <form>
+                <div class="form-group">
+                    <label for="meeting-title">Meeting Title</label>
+                    <input type="text" class="form-control" id="meeting-title" placeholder="Enter meeting title" required>
+                </div>
+                <div class="form-group">
+                    <label for="meeting-date">Date</label>
+                    <input type="date" class="form-control" id="meeting-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="meeting-time">Time</label>
+                    <input type="time" class="form-control" id="meeting-time" required>
+                </div>
+                <button type="submit" class="btn btn-success">Create Meeting</button>
+            </form>
+        </div>
+
+        <!-- Chat Area -->
+        <div class="chat-area">
+            <h3>Chat Area</h3>
+            <div class="chat-message">
+                <p class="message-user">John Doe</p>
+                <p>Hello everyone!</p>
+                <p class="message-time">10:00 AM</p>
+            </div>
+            <div class="chat-message">
+                <p class="message-user">Jane Smith</p>
+                <p>Hi John, how are you?</p>
+                <p class="message-time">10:05 AM</p>
+            </div>
+            <!-- Add more chat messages as needed -->
+
+            <!-- Chat Input Form -->
+            <div class="chat-input">
+                <textarea placeholder="Type your message here..."></textarea>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 footer-info">
+                    <h4>Co-scholar</h4>
+                    <p>Wakiso-Kampala<br>
+                        Uganda<br><br>
+                        <strong>Phone:</strong> +256 772 577 366<br>
+                        <strong>Email:</strong> info@Co-scholar.com<br>
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Teachers</a></li>
+                        <li><a href="meeting-room.html">Meeting Rooms</a></li>
+                        <li><a href="library.html">Library</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">Resource Management</a></li>
+                        <li><a href="#">Online Courses</a></li>
+                        <li><a href="#">Research Assistance</a></li>
+                        <li><a href="#">Community Engagement</a></li>
+                        <li><a href="#">Access</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-newsletter">
+                    <h4>Our Newsletter</h4>
+                    <p>Subscribe to our newsletter to receive updates:</p>
+                    <form action="" method="post">
+                        <input type="email" name="email" required><input type="submit" value="Subscribe">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <div class="credits">
+                &copy; Copyright <strong>Co-scholar</strong>. All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
